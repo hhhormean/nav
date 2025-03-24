@@ -1,53 +1,75 @@
 .box2 {
-    height: 86px;
+    height: 90px;
     cursor: pointer;
-    border-radius: 4px;
-    padding: 0px 30px 0px 30px;
+    border-radius: 8px;
+    padding: 0px 25px;
     background-color: #fff;
-    border-radius: 4px;
     border: 1px solid #e4ecf3;
-    margin: 20px 0 0 0;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    margin: 15px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .box2:hover {
-    transform: translateY(-6px);
-    -webkit-transform: translateY(-6px);
-    -moz-transform: translateY(-6px);
-    box-shadow: 0 26px 40px -24px rgba(0, 36, 100, 0.3);
-    -webkit-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, 0.3);
-    -moz-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, 0.3);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0, 36, 100, 0.15);
+    border-color: #d0e3f2;
+}
+
+.box2:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -5px rgba(0, 36, 100, 0.1);
+}
+
+.xe-comment-entry {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .xe-comment-entry img {
-    float: left;
-    display: block;
-    margin-right: 10px;
-}
-.xe-comment {
-    transform: translateY(-50%);
-    position: absolute;
-    margin-left: 50px;
-    top: 50%;
-}
-.xe-comment p {
-    margin-bottom: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     margin-right: 15px;
+    transition: transform 0.3s ease;
 }
+
+.box2:hover .xe-comment-entry img {
+    transform: scale(1.1);
+}
+
+.xe-comment {
+    flex: 1;
+    position: relative;
+    transform: none;
+    margin-left: 0;
+    top: 0;
+}
+
+.xe-comment a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.xe-comment p {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
 .overflowClip_1 {
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
 }
+
 .overflowClip_2 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -56,12 +78,31 @@
     -webkit-box-orient: vertical;
 }
 
+@media (max-width: 768px) {
+    .box2 {
+        height: 80px;
+        padding: 0px 20px;
+    }
+    
+    .xe-comment-entry img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .xe-comment a {
+        font-size: 15px;
+    }
+    
+    .xe-comment p {
+        font-size: 12px;
+    }
+}
 
-.submit-tag{
-    margin-top: 50px;
-
+.submit-tag {
+    margin-top: 40px;
 }
 
 .img-circle {
-    padding: 7px 0;
+    padding: 0;
+    object-fit: cover;
 }
